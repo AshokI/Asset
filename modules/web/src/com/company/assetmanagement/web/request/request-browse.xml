@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.assetmanagement.web.request.RequestBrowse"
+        messagesPack="com.company.assetmanagement.web.request">
+    <dsContext>
+        <collectionDatasource id="assetsDs"
+                              class="com.company.assetmanagement.entity.Asset"
+                              view="_minimal">
+            <query>
+                <![CDATA[select b from assetmanagement$Asset b
+order by b.name]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="addAssetDs"
+                              class="com.company.assetmanagement.entity.AddAsset"
+                              view="_minimal">
+            <query>
+                <![CDATA[select p from assetmanagement$AddAsset p
+where p.name.id = :component$assetField.id
+order by p.name.name]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <actions>
+        <action id="createAsset"
+                caption="msg://actions.Create"
+                icon="icons/create.png"
+                invoke="createAsset"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <groupBox caption="msg://selectAsset"
+                  spacing="true"
+                  width="AUTO">
+            <lookupPickerField id="assetField"
+                               optionsDatasource="assetsDs"
+                               width="300px"/>
+        </groupBox>
+        <groupBox caption="msg://selectcompany"
+                  spacing="true">
+            <table id="addAssetsTable"
+                   align="TOP_CENTER"
+                   height="100px"
+                   width="100%">
+                <actions>
+                    <action id="createcompnay"
+                            caption="msg://createcompany"
+                            icon="icons/create.png"
+                            invoke="createcompany"
+                            shortcut="Ctrl-Insert"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="company"/>
+                    <column id="modelname"/>
+                    <column id="serialname"/>
+                </columns>
+                <rows datasource="addAssetDs"/>
+            </table>
+        </groupBox>
+        <button id="send"
+                caption="req"/>
+    </layout>
+</window>

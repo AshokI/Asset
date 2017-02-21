@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="Asset_Management"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.assetmanagement.entity.AddAsset</class>
+        <class>com.company.assetmanagement.entity.Suplier</class>
+        <class>com.company.assetmanagement.entity.Request</class>
+        <class>com.company.assetmanagement.entity.Selectasset</class>
+        <class>com.company.assetmanagement.entity.Branch</class>
+        <class>com.company.assetmanagement.entity.Asset</class>
+        <class>com.company.assetmanagement.entity.Send</class>
+    </persistence-unit>
+</persistence>

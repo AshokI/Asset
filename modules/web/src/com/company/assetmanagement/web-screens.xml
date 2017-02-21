@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/assetmanagement/screens.xml"/>
+    <screen id="assetmanagement$AddAsset.edit"
+            template="com/company/assetmanagement/web/addasset/add-asset-edit.xml"/>
+    <screen id="assetmanagement$AddAsset.browse"
+            template="com/company/assetmanagement/web/addasset/add-asset-browse.xml"/>
+    <screen id="assetmanagement$Suplier.browse"
+            template="com/company/assetmanagement/web/suplier/suplier-browse.xml"/>
+    <screen id="assetmanagement$Suplier.edit"
+            template="com/company/assetmanagement/web/suplier/suplier-edit.xml"/>
+    <screen id="assetmanagement$Request.browse"
+            template="com/company/assetmanagement/web/request/request-browse.xml"/>
+    <screen id="assetmanagement$Branch.browse"
+            template="com/company/assetmanagement/web/branch/branch-browse.xml"/>
+    <screen id="assetmanagement$Branch.edit"
+            template="com/company/assetmanagement/web/branch/branch-edit.xml"/>
+    <screen id="assetmanagement$Asset.edit"
+            template="com/company/assetmanagement/web/asset/asset-edit.xml"/>
+    <screen id="assetmanagement$Send.browse"
+            template="com/company/assetmanagement/web/send/send-browse.xml"/>
+    <screen id="assetmanagement$Send.edit"
+            template="com/company/assetmanagement/web/send/send-edit.xml"/>
+    <screen id="assetmanagement$Asset.browse"
+            template="com/company/assetmanagement/web/asset/asset-browse.xml"/>
+</screen-config>

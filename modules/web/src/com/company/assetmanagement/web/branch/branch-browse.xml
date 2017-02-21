@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.assetmanagement.web.branch.BranchBrowse"
+        focusComponent="branchesTable"
+        lookupComponent="branchesTable"
+        messagesPack="com.company.assetmanagement.web.branch">
+    <dsContext>
+        <collectionDatasource id="branchesDs"
+                              class="com.company.assetmanagement.entity.Branch"
+                              view="_local">
+            <query>
+                <![CDATA[select e from assetmanagement$Branch e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="branchesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="branchesTable"
+                datasource="branchesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="branchesTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="branchname"/>
+            </columns>
+            <rows datasource="branchesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="branchesTable.create"/>
+                <button id="editBtn"
+                        action="branchesTable.edit"/>
+                <button id="removeBtn"
+                        action="branchesTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>
